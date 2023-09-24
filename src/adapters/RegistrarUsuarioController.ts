@@ -8,15 +8,7 @@ export default class RegistrarUsuarioController{
     ){
         servidor.post('/usuarios',async ({body}) => {
             const {nome, email, senha} = body as any;
-
             await casoDeUso.executar({nome, email, senha})
-
-            return{
-                status: 201,
-                body: {
-                    mensagem: 'Usuario criado com sucesso'
-                }
-            }
         })
     }
 }

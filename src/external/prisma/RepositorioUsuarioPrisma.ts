@@ -31,5 +31,11 @@ export default class RepositorioUsuarioPrisma implements RepositorioUsuario{
 
     }
 
+    deletarID(id: number): Promise<Usuario | null> { 
+        return this.prisma.usuario.delete({where:{id,}})   
+    }
 
+    atualizarID(id: number, usuario: Usuario): Promise<Usuario | null> {
+        return this.prisma.usuario.update({where:{id,}, data: usuario})
+    }
 }

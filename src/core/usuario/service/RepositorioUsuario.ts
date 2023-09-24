@@ -9,4 +9,8 @@ export default interface RepositorioUsuario{
     consultarTodos(): Promise<Usuario[]>;
 
     consultarID(id: number): Promise<Usuario | null>;
+
+    deletarID(id: number): Promise<Usuario | null>;
+
+    atualizarID(id: number, usuario: Usuario): Promise <Usuario | null>;
 }

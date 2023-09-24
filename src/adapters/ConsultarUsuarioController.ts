@@ -3,7 +3,7 @@ import ConsultarUsuarios from "../core/usuario/service/ConsultarUsuario";
 
 export default class ConsultarUsuarioController{
     constructor(readonly servidor: Elysia, readonly casoDeUso: ConsultarUsuarios){
-        servidor.get('/lista',async () => {
+        servidor.get('/usuarios',async () => {
             return casoDeUso.executar()
         }) 
     }
